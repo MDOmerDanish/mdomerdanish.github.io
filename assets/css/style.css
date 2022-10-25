@@ -85,9 +85,9 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  /*color: #00796b;*/
+  color: #00796b;
 
-  color: #16537e;
+ /* color: #16537e;  */
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -118,10 +118,10 @@
 }
 
 .contactme:hover{
-  /*   color: #00796b;    */
+    color: #00796b;    
 
 
- color: #16537e;
+ /*    color: #16537e;   */
 
   background-color: white;
 }
@@ -146,9 +146,9 @@ body {
 } */
 
 a {
- /* color: #004d40;    */
+ color: #004d40;    
 
-    color:#16537e;
+   /*    color:#16537e; */
 }
 
 /* main blockqoute */
@@ -484,8 +484,8 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
- /* border-bottom: 3px solid #004d40 !important;    */
- border-bottom: 3px solid #16537e !important;
+  border-bottom: 3px solid #004d40 !important;   
+/*   border-bottom: 3px solid #16537e !important;    */
 
 }
 
