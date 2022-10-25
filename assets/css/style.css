@@ -328,7 +328,10 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  /*    background: #a7ffeb repeat;   */
+ background: #16537E repeat;
+
+
   position: relative;
 }
 
