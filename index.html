@@ -1293,8 +1293,14 @@
   <style>
     .img-wrapper {
       position: relative;
-      overflow: hidden; /* This keeps the wide certificate from overlapping other photos */
+      overflow: hidden;
       border-radius: 4px;
+      /* This ensures the "boxes" for all three are the same height */
+      height: 180px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f9f9f9; /* Light background for the 'wide' gaps */
     }
     .img-wrapper:hover .hover-icon {
       opacity: 1;
@@ -1310,9 +1316,17 @@
       opacity: 0;
       transition: opacity 0.3s ease;
       pointer-events: none;
+      z-index: 2;
     }
     .hover-icon i {
       font-size: 2rem;
+    }
+    .award-img {
+      height: 100%;
+      width: 100%;
+      /* 'contain' ensures the whole image (wide or tall) fits inside the height without cropping or stretching */
+      object-fit: contain; 
+      display: block;
     }
   </style>
 
@@ -1332,9 +1346,7 @@
           <div class="col s4" style="padding: 0 5px;">
             <div class="img-wrapper">
               <a href="assets/img/poster_certificate_full.jpg" target="_blank">
-                <img src="assets/img/poster_certificate.jpg" alt="Second Place Certificate"
-                     class="responsive-img" 
-                     style="width: 145%; max-width: none; cursor: pointer; display: block; margin-left: -22.5%;">
+                <img src="assets/img/poster_certificate.jpg" alt="Second Place Certificate" class="award-img">
                 <div class="hover-icon"><i class="material-icons">zoom_in</i></div>
               </a>
             </div>
@@ -1344,9 +1356,7 @@
           <div class="col s4" style="padding: 0 5px;">
             <div class="img-wrapper">
               <a href="assets/img/poster_event_photo.jpeg" target="_blank">
-                <img src="assets/img/poster_event_photo.jpeg" alt="Poster Presentation Photo"
-                     class="responsive-img" 
-                     style="width: 90%; cursor: pointer; display: block; margin: 0 auto;">
+                <img src="assets/img/poster_event_photo.jpeg" alt="Poster Presentation Photo" class="award-img">
                 <div class="hover-icon"><i class="material-icons">zoom_in</i></div>
               </a>
             </div>
@@ -1356,8 +1366,7 @@
           <div class="col s4" style="padding: 0 5px;">
             <div class="img-wrapper" style="border: 1px solid #eee;">
               <a href="assets/thesis/poster.pdf" target="_blank">
-                <img src="assets/img/poster_photo.png" alt="Poster PDF"
-                     class="responsive-img" style="width: 85%; display: block; margin: 0 auto;">
+                <img src="assets/img/poster_photo.png" alt="Poster PDF" class="award-img">
                 <div class="hover-icon"><i class="material-icons">picture_as_pdf</i></div>
               </a>
             </div>
@@ -1369,7 +1378,6 @@
     </div>
   </div>
 </section>
-
 
 
 
