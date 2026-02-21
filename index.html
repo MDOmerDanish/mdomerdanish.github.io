@@ -14,11 +14,14 @@
       })(window,document,'script','dataLayer','GTM-PGZH8HT');</script>
       <!-- End Google Tag Manager -->
 
+
+
+      <!--  
 <script> function websiteVisits(response) {
     document.querySelector("#visits").textContent = response.value;
 }
 </script>
-
+  -->
    
 
        <script async src="https://api.countapi.xyz/hit/mdomerdanish.github.io/fc21b710-c706-4dc7-b1e6-bede26b1307e?callback=websiteVisits"></script>
@@ -1694,7 +1697,7 @@ asset verification across multiple enterprises.
             </p>
 
 
-
+                
             <p>
               <a aria-label="View Danish on Facebook" href="https://www.facebook.com/profile.php?id=100010497047068" target="_blank"
                 data-position="top" data-tooltip="View Danish on Facebook"
@@ -1706,7 +1709,7 @@ asset verification across multiple enterprises.
 
 
 
-
+                <!-- 
             <p>
               <a aria-label="View Danish on Twitter" href="https://twitter.com/omerdanish7" target="_blank"
                 data-position="top" data-tooltip="View Danish on Twitter"
@@ -1715,7 +1718,7 @@ asset verification across multiple enterprises.
                   class="hoverline" target="_blank">https://twitter.com/omerdanish7</a></a>
             </p>
 
-
+              -->
 
 
 
@@ -1727,6 +1730,30 @@ asset verification across multiple enterprises.
 
             This site has been visited <span id="visits"></span> times.
             <!--    https://medium.com/@codefoxx/how-to-count-the-number-of-visits-on-your-website-with-html-css-javascript-and-the-count-api-2f99b42b5990      ei link e jeye  website visit track kora jabe  -->
+          
+          
+          <script>
+  (function() {
+    // 1. Get the current count from the browser's memory
+    let count = localStorage.getItem('total_visits');
+
+    if (count) {
+      // 2. If it exists, add 1 to it
+      count = parseInt(count) + 1;
+    } else {
+      // 3. If it's the very first visit, start at 1
+      count = 1;
+    }
+
+    // 4. Save the updated number back to memory
+    localStorage.setItem('total_visits', count);
+
+    // 5. Inject the number into your HTML span
+    document.getElementById('visits').textContent = count;
+  })();
+</script>
+          
+          
           </div>
         </section>
       </main>
