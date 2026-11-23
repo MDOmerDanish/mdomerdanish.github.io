@@ -516,6 +516,16 @@ asset verification across multiple enterprises.
               </span>
             </p>
             <p class="brown-text">IEEE ICNC 2027 | Farlina Barik Easha, Zhe Peng, <b>Md Omer Danish</b>, and Xiaoxue Zhang | UNRcyberLab</p>
+            <p>
+              <b>Abstract:</b> Privacy-preserving proxies let users query commercial large language model (LLM) services without revealing their identity. However, this places untrusted intermediaries on the service path, where malicious proxies can edit the prompt and response when relaying, and using a cheaper model. Existing work either hides the user from the LLM service provider or tests whether a provider serves the claimed model. Neither checks what the proxy delivers. We propose <i>VeriProxy</i>, an auditing layer that separates relaying from auditing: proxies relay traffic, and independent auditors monitor the activities and validate results. We focus on three problems: defining malicious proxy behaviors, detecting tampering when the provider's response is never observable, and turning noisy per-session verdicts into accountability without losing user privacy. Evaluation results from a prototype running on a proxied serving pipeline show that the three checker models in auditors reach 91.27%, 93.89%, and 99.41% detection accuracy, and that auditing retains 69.1% of baseline throughput at 1.42&times; mean latency.
+            </p>
+            <br>
+
+            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
+              <img src="assets/img/veriproxy_workflow.png" alt="VeriProxy workflow: client, coordinator, proxy, auditor, and LLM service provider"
+                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
+              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig: VeriProxy workflow</i></p>
+            </div>
           </div>
         </div>
 
