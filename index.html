@@ -505,6 +505,16 @@ asset verification across multiple enterprises.
               </span>
             </p>
             <p class="brown-text">IEEE ICNC 2027 | Zhe Peng, <b>Md Omer Danish</b>, Farlina Barik Easha, and Xiaoxue Zhang | UNRcyberLab</p>
+            <p>
+              <b>Abstract:</b> Distributed LLM serving enables large models and long-context applications to run across many nodes. For such requests, the prefill phase is the bottleneck since it must process the whole prompt before generating the first token. Many prompts share a common prefix, thus prefix caching can reduce this cost by routing requests to nodes that already hold the required KV cache. However, in distributed systems with mutually untrusted nodes, a node can falsely advertise its cache or compute state to attract requests, causing high latency for the clients. In this work, we present <i>KVMirage</i>, a trust-aware routing mechanism for distributed LLM serving that mitigates malicious cache and compute state advertisements. We design a prediction-feedback loop to detect nodes that fail to meet the serving latency predicted from their own claims. We further propose a behavioral trust score mechanism to evaluate the trustworthiness of nodes. Evaluation in a 1,000-node simulation shows that, with 20% malicious nodes, KVMirage is able to reduce mean time to first token by 86%, and cut the traffic captured by malicious nodes from 82% to 29%, while adding under 1% latency in the honest case.
+            </p>
+            <br>
+
+            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
+              <img src="assets/img/kvmirage_design.png" alt="KVMirage system design: entry node with state and score tables routing client requests among honest and malicious model nodes"
+                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
+              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig: KVMirage system design</i></p>
+            </div>
           </div>
         </div>
 
