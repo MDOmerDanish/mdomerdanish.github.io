@@ -343,6 +343,17 @@ h3 {
   top: 0;
 }
 
+/* Intro sizes to its content instead of filling the whole screen,
+   so the About section is reachable with less scrolling. */
+#intro.section.full-height {
+  height: auto;
+}
+
+#intro.section .container {
+  position: relative;
+  padding-bottom: 40px;
+}
+
 /* #intro.section .container *:not(span) {
   font-weight: 300;
   line-height: 150%;
