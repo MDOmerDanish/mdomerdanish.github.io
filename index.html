@@ -587,16 +587,24 @@ asset verification across multiple enterprises.
             </p>
             <br>
 
-            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
-              <img src="assets/img/decroute_comparison.png" alt="Comparison of cache-location metadata placement: (a) central scheduler with a global directory, (b) full replication where every node stores every cache index, (c) DecRoute with root ownership gossip and local indexes"
-                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
-              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 1: Comparison of different placements of cache-location metadata</i></p>
-            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0; margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
 
-            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
-              <img src="assets/img/decroute_overview.png" alt="DecRoute overview: an entry server forwards the prompt across peer servers to the target server using Tier 1 root ownership tables and Tier 2 local indexes"
-                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
-              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 2: DecRoute two-tier prompt forwarding</i></p>
+              <div style="flex: 1; border-right: 1px solid #eee;">
+                <div style="position: relative; overflow: hidden;">
+                  <img src="assets/img/decroute_comparison.png" alt="Comparison of cache-location metadata placement: (a) central scheduler with a global directory, (b) full replication where every node stores every cache index, (c) DecRoute with root ownership gossip and local indexes"
+                       style="width: 100%; height: 350px; object-fit: contain; display: block; padding: 15px;">
+                </div>
+                <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 1: Comparison of different placements of cache-location metadata</i></p>
+              </div>
+
+              <div style="flex: 1;">
+                <div style="position: relative; overflow: hidden;">
+                  <img src="assets/img/decroute_overview.png" alt="DecRoute overview: an entry server forwards the prompt across peer servers to the target server using Tier 1 root ownership tables and Tier 2 local indexes"
+                       style="width: 100%; height: 350px; object-fit: contain; display: block; padding: 15px;">
+                </div>
+                <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 2: DecRoute two-tier prompt forwarding</i></p>
+              </div>
+
             </div>
           </div>
         </div>
