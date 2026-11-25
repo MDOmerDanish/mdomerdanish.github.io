@@ -547,6 +547,30 @@ asset verification across multiple enterprises.
               </span>
             </p>
             <p class="brown-text"><b>Md Omer Danish</b>, Zhe Peng, Farlina Barik Easha, and Xiaoxue Zhang | UNRcyberLab</p>
+            <p>
+              <b>Abstract:</b> While significant progress has been made in open-source LLM development, centralized inference providers impose vendor lock-in, opaque pricing, and single points of failure. Decentralized inference emerges as an alternative: any entity with spare GPU capacity can serve for profit. Here the provider is untrusted, and a client cannot tell what work it is paying for. Many clients now have local compute to run a small language model, and speculative decoding provides a solution: the client drafts tokens locally, and the servers verify them, returning a response. These decisions record the work the server performed, and the client can audit them against its own draft distribution. Inspired by payment channel networks, we propose <i>SPECIE</i>, Trustless Payment Channels for Decentralized <u>SPEC</u>ulative LLM <u>I</u>nferenc<u>E</u>. To handle indeterminate payments and achieve pay-as-you-go settlement, we introduce <i>Speculative State Channels</i>, which bind each payment to the accepted tokens. To prevent malicious clients from exhausting server VRAM, we introduce a <i>Payment-Aware KV Cache Scheduler</i> with lease-based eviction under a grace period. Evaluation results from a prototype implemented on a real GPU against a live blockchain show that the payment layer costs well under a millisecond per round, and <i>SPECIE</i> outpaces naive autoregressive decoding by 1.39&times;.
+            </p>
+            <br>
+
+            <div style="display: flex; align-items: flex-start; gap: 0; margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
+
+              <div style="flex: 1; border-right: 1px solid #eee;">
+                <div style="position: relative; overflow: hidden;">
+                  <img src="assets/img/specie_overview.png" alt="SPECIE overview: clients generate draft tokens locally and hubs verify them with the target LLM, connected by payment channels and network channels"
+                       style="width: 100%; height: 350px; object-fit: contain; display: block; padding: 15px;">
+                </div>
+                <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 1: SPECIE system overview</i></p>
+              </div>
+
+              <div style="flex: 1;">
+                <div style="position: relative; overflow: hidden;">
+                  <img src="assets/img/specie_workflow.png" alt="SPECIE workflow between client node, LLM server node, and blockchain: channel opening, draft tokens, VRAM reservation, encrypted token batches, key release after payment, and final settlement"
+                       style="width: 100%; height: 350px; object-fit: contain; display: block; padding: 15px;">
+                </div>
+                <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 2: SPECIE workflow</i></p>
+              </div>
+
+            </div>
           </div>
         </div>
 
@@ -558,6 +582,22 @@ asset verification across multiple enterprises.
               </span>
             </p>
             <p class="brown-text">Zhe Peng, <b>Md Omer Danish</b>, Farlina Barik Easha, and Xiaoxue Zhang | UNRcyberLab</p>
+            <p>
+              <b>Abstract:</b> Large language models increasingly solve complex tasks with long prompts, such as document analysis, retrieval-augmented generation, and agents. Such prompts are expensive to process, but their long prefixes recur across requests, which makes cached key-value (KV) state reused become possible. Existing distributed LLM serving systems route each request to a GPU holding a matching prefix, requiring either a central scheduler tracking every node's cache or fast links for moving KV state. However, in Peer-to-peer LLM serving system, neither is possible. Maintaining a global cache index at every node does not scale. We propose <i>DecRoute</i>, a scalable protocol for KV cache maintenance and request forwarding for decentralized LLM serving systems. Instead of moving KV tensors, <i>DecRoute</i> forwards only the raw prompt. Instead of every node holding an identical copy of the global index, <i>DecRoute</i> keeps a small root-level index global and matches prefixes locally at each node. We design a two-tier routing scheme, where tier 1 gossips root-chunk ownership only, while tier 2 keeps fine-grained matching local, in a radix tree serving as a forwarding table. Evaluation results from a prototype on a five-peer real-model shows that, <i>DecRoute</i> reduces average time-to-first-token by 67% and raises completed throughput by 1.8&times; over serving each request where it arrives.
+            </p>
+            <br>
+
+            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
+              <img src="assets/img/decroute_comparison.png" alt="Comparison of cache-location metadata placement: (a) central scheduler with a global directory, (b) full replication where every node stores every cache index, (c) DecRoute with root ownership gossip and local indexes"
+                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
+              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 1: Comparison of different placements of cache-location metadata</i></p>
+            </div>
+
+            <div style="margin-left: -24px; margin-right: -24px; border-top: 1px solid #eee; background-color: #fff;">
+              <img src="assets/img/decroute_overview.png" alt="DecRoute overview: an entry server forwards the prompt across peer servers to the target server using Tier 1 root ownership tables and Tier 2 local indexes"
+                   style="width: 100%; max-height: 450px; object-fit: contain; display: block; padding: 15px;">
+              <p class="center-align grey-text" style="font-size: 0.8rem; margin-bottom: 10px;"><i>Fig 2: DecRoute two-tier prompt forwarding</i></p>
+            </div>
           </div>
         </div>
 
